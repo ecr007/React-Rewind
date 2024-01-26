@@ -10,14 +10,32 @@
 
 To create an element with **react@17** we use ReactDOM.render() function.
 
-```html
-    <div id="root"></div>
-```
-
 ```js
-const root = document.getElementById("root");
-const title = React.createElement("h1", null, "Hello World");
+const body = document.querySelector("body");
 
+const root = document.createElement("div");
+root.setAttribute("id","root");
+
+// Set root
+body.append(root);
+
+const reactOptions = {
+    className: "title",
+    style: {
+        color: "#333",
+        fontSize: "28px",
+        backgroundColor: "#f2f2f2",
+        padding: "32px",
+        border: "3px dashed #333",
+        fontFamily: "Helvetica",
+        textAlign: "center",
+        borderRadius: "6px",
+        margin: "32px 60px"
+    },
+}
+
+// Create React
+const title = React.createElement("h1", reactOptions, "Hello Everyone");
 
 ReactDOM.render(title, root);
 ```
