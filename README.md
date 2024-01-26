@@ -34,11 +34,22 @@ const reactOptions = {
     },
 }
 
+const paragraph = React.createElement("p", {}, "Hello World");
+
 // Create React
-const title = React.createElement("h1", reactOptions, "Hello Everyone");
+const title = React.createElement("div", reactOptions, paragraph);
 
 ReactDOM.render(title, root);
 ```
 
-- ReactDOM.render(reactNode, domRoot, callback?): Renders a piece of JSX (React Node) into a browser DOM node.
+- React.createElement(type, props, ...children): lets you create a React Element. It serves as an alternative to writing JSX. 
+
+## Refactoring Elements using JSX
+
+**What is JSX?**
+JavaScript as XML. It's a syntax extension for JavaScript Recommended by React for building user intefaces. JSX allows you to write HTML elements and components in a syntax that looks similar to XML or HTML within JavaScript code.  
+
+Note: Using curly braces to put variables ```{varName}``` inside String.
+
+## Incorporating Babel
 
