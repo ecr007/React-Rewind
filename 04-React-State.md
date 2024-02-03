@@ -96,6 +96,22 @@ function runAway( {name, age} ){
 ### useState()
 Manages state within functional components allowing you to declare and update state variables.
 
+```js
+import {useState} from "react";
+
+function Header(  ){
+    
+    const [name, setName] = useState("Pedro"); // Return an Array with two parameter, undifined firts and a funcion as second.
+
+    return (
+        <p className="whatever">{name}<p>
+        <button onClick={ () => setName("Pablo")} > Set Name</>
+    );
+}
+
+export default Header;
+```
+
 ### useEffect()
 Performs side effects in functional components such as data feching, subscription, or manual DOM manipulations. 
 
