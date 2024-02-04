@@ -93,7 +93,7 @@ function runAway( {name, age} ){
 
 **The most commonly used hook are:**
 
-### useState()
+## useState()
 Manages state within functional components allowing you to declare and update state variables.
 
 ```js
@@ -112,8 +112,64 @@ function Header(  ){
 export default Header;
 ```
 
-### useEffect()
+## useEffect(callback, [dependecies list])
 Performs side effects in functional components such as data feching, subscription, or manual DOM manipulations. 
 
-### useContext()
+Dependencies List: To modify stateful value it needed set it in dependencies list. 
+
+Note: Following variables changed.
+
+```js
+import '../App.css';
+import { useEffect, useState } from 'react';
+
+const Counter = () => {
+
+	const [number, setNumber] = useState(0);
+
+	useEffect(() => {
+		if(number === 5){
+			setNumber(0);
+		}	
+	},[number])
+
+	return (
+		<>
+			<div className="card text-center">
+			<h1 id='counter'>{number}</h1>
+			<br />
+			<button className='btn btn-sm btn-success' onClick={
+				() => {
+					setNumber(number + 1)
+				}
+			}>+ Add</button>
+			</div>
+		</>
+	)
+}
+
+export default Counter;
+```
+
+## useReducer()
+Is going to take in two different arguments, the first is the function that we're going to use to update our state, the second argument is the default initial state.
+
+Note the different between ```useReducer``` and ```useState```, it does not need past function to being execute.
+
+```js
+import '../App.css';
+import {useReducer} from 'react';
+
+export default function Reducer(){
+	const [checked, setChecked] = useReducer((value) => !value, false);
+	return (
+		<>
+			<h1>The option is {checked ? "Ok" : "no Ok"}</h1>
+			<button onClick={setChecked}>Click me!</button>
+		</>
+	);
+}
+```
+
+## useContext()
 Allows you to subscribe to React context without indroduce nesting. 
