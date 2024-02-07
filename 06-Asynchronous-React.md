@@ -82,3 +82,11 @@ const AsyncFetch = () => {
 
 export default AsyncFetch;
 ```
+
+## Fetching Data with GraphQL
+
+**What is GraphQL?**
+GraphQL is a query language for APIs (Application Programming Interfaces) and a server-side runtime for executing those queries with your existing data. It was developed by Facebook in 2012 and later open-sourced in 2015. GraphQL provides a more efficient, powerful, and flexible alternative to the traditional REST (Representational State Transfer) API.
+
+## Working With Render Probs
+
