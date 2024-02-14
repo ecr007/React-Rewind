@@ -1,26 +1,22 @@
 # Handling Forms in React
 
 ## useRef()
-To reach out to an individual element 
+Hook is used to create a mutable object call a "ref" that can hold a reference to a DOM element or a value that persists across renders. 
 
-Note: Its necessary use ```ref="varToReference"``` to reference the value and follow change.
+use ```refInstance.current``` to get all parameter of tag DOM.
+
+Remember use ```useRef``` is like to use ```document.getElementById()``` that return a instance of a element.
 
 ```js
 import '../App.css';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
-const Ref = () => {
-	const name = useRef("John Doe");
+const FormWithRef = () => {
+	const name = useRef(null);
 
-	// To define default value must be useState(default)
-	// const [x, setX] = useState(default);
-
-	const submit = (e) => {
-		e.preventDefault();
-
-		console.log(name.current.value);
-		name.current.value = ""
-	};
+	useEffect(() => {
+		console.log(name.current.value)
+	}, []);
 
 	return (
 		<form action="#" onSubmit={submit}>
@@ -35,7 +31,7 @@ const Ref = () => {
 	)
 }
 
-export default Ref;
+export default FormWithRef;
 ```
 
 ## Building a custom Hook
